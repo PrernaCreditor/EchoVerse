@@ -124,17 +124,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function toggleMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   const hamburger = document.querySelector('.hamburger');
-  
-  mobileMenu.classList.toggle('active');
-  
-  // Change hamburger icon
-  if (mobileMenu.classList.contains('active')) {
-    hamburger.textContent = '✕';
-    hamburger.style.transform = 'rotate(0deg)';
-  } else {
-    hamburger.textContent = '☰';
-  }
+
+  mobileMenu.classList.toggle("active");
+  hamburger.classList.toggle("open");
 }
+
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
@@ -144,7 +138,8 @@ document.addEventListener('click', (e) => {
   if (mobileMenu && mobileMenu.classList.contains('active')) {
     if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
       mobileMenu.classList.remove('active');
-      hamburger.textContent = '☰';
+     hamburger.classList.remove("open");
+
     }
   }
 });
@@ -156,7 +151,8 @@ window.addEventListener('resize', () => {
   
   if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
     mobileMenu.classList.remove('active');
-    hamburger.textContent = '☰';
+    hamburger.classList.remove("open");
+
   }
 });
 
