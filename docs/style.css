@@ -1430,3 +1430,150 @@ body {
     text-align: left;
   }
 }
+/* ============================================================
+   📱 UNIVERSAL MOBILE RESPONSIVENESS PATCH  
+   — Fixes ALL sections without rewriting your CSS
+   ============================================================ */
+
+/* ---------------------------------------------
+   GENERAL MOBILE SPACING
+--------------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    padding: 0 !important;
+    overflow-x: hidden;
+  }
+
+  section {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+}
+
+/* ---------------------------------------------
+   NAVBAR FIXES
+--------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 5%;
+    height: 64px;
+  }
+
+  #headerimage {
+    height: 32px;
+  }
+
+  .mobile-menu {
+    width: 100%;
+    padding: 1rem 6%;
+  }
+}
+
+/* ---------------------------------------------
+   HERO SECTION FIXES
+--------------------------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .slide {
+    object-position: center 35%; /* better framing on mobile */
+  }
+
+  .hero-title {
+    font-size: 1.8rem !important;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+}
+
+/* ---------------------------------------------
+   ABOUT SECTION FIXES
+--------------------------------------------- */
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-img {
+    max-height: 300px;
+    border-radius: 14px;
+  }
+
+  .about-content {
+    padding: 1.4rem !important;
+  }
+
+  .about-title .title-text {
+    font-size: 1.3rem;
+  }
+}
+
+/* ---------------------------------------------
+   ACTS SECTION FIXES
+--------------------------------------------- */
+@media (max-width: 768px) {
+  .act-inner {
+    grid-template-columns: 1fr !important;
+    padding: 1.3rem !important;
+    gap: 1.4rem !important;
+  }
+
+  .act-image img {
+    height: 260px !important;
+    object-fit: cover;
+  }
+
+  .act-title {
+    font-size: 1.35rem !important;
+  }
+
+  .act-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ---------------------------------------------
+   CONTACT SECTION FIXES
+--------------------------------------------- */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-image img {
+    height: 260px !important;
+    object-fit: cover;
+  }
+
+  .contact-form form input,
+  .contact-form form textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------------------------------------------
+   FOOTER FIXES
+--------------------------------------------- */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  #footerimage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-services li,
+  .footer-socials a {
+    font-size: 0.9rem;
+  }
+}
