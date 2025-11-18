@@ -1577,3 +1577,68 @@ body {
     font-size: 0.9rem;
   }
 }
+/* ============================================================
+   📱 FIX LOGO COLLAPSING NAVBAR ON MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* shrink the logo safely */
+  #headerimage {
+    height: 28px !important;
+    width: auto !important;
+    max-width: 140px !important;
+    object-fit: contain !important;
+  }
+
+  .logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  /* keep navbar items aligned */
+  .navbar {
+    height: 60px !important;
+    padding: 0 5% !important;
+  }
+
+  /* ensure hamburger stays visible */
+  .hamburger {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  /* prevent overflow */
+  .navbar * {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+/* ============================================================
+   📱 FIX HERO SLIDESHOW IMAGES ON MOBILE
+   Makes images scale consistently on all devices
+   ============================================================ */
+@media (max-width: 768px) {
+
+  .slide {
+    object-fit: cover !important;
+    object-position: center center !important;
+    height: 100vh !important;
+    width: 100% !important;
+    transform: scale(1.08) !important; /* adds cinematic look */
+  }
+
+  .slide.active {
+    transform: scale(1) !important;
+  }
+
+  /* Reduce overlay strength so image stays visible */
+  .image-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.75)
+    ) !important;
+  }
+}
+
