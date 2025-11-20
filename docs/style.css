@@ -80,18 +80,44 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 0.6rem;              /* space between icon + wordmark */
 }
 
-/* clean, slim header logo */
-#headerimage {
-  height: 40px;          /* tweak 36–42px if you want */
+/* round icon / mark */
+#logoimage {
+  height: 34px;             /* a bit smaller than text logo */
   width: auto;
   object-fit: contain;
   display: block;
-  margin-top: 2px;       /* tiny visual centering */
-  /* optional: very soft shadow to lift it a bit */
+  margin-top: 0;            /* remove vertical offset */
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
+
+/* wordmark logo */
+#headerimage {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-top: 0;            /* keep both aligned perfectly */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+/* optional: make them scale a bit down on small screens */
+@media (max-width: 600px) {
+  .logo {
+    gap: 0.4rem;
+  }
+
+  #logoimage {
+    height: 30px;
+  }
+
+  #headerimage {
+    height: 34px;
+  }
+}
+
 
 
 /* .logo::before {
@@ -240,7 +266,7 @@ body {
 .slideshow {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 2;
   overflow: hidden;
 }
 
@@ -310,12 +336,17 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  pointer-events: none;  /* let clicks through */
 }
-
+.hero-content,
+.hero-content * {
+  pointer-events: auto; /* text & buttons stay clickable */
+}
 .hero-content {
   max-width: 720px;
   padding: 3rem 1.5rem 4rem;
 }
+
 
 .hero-title {
   display: flex;
@@ -525,15 +556,39 @@ body {
 }
 
 /* Image container */
-.about-image {
+/* 📸 ABOUT – slideshow with full image visible */
+.about-image.about-slideshow {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: #000;
   box-shadow: var(--shadow-soft);
-  max-width: 100%;
-  height: auto;
+  background: #000;
+
+  /* fixed aspect ratio so the block is stable */
+  aspect-ratio: 4 / 5;        /* tweak to 3/4 or 16/9 if you prefer */
+  max-height: 460px;
 }
+
+/* each slide fills the box but keeps full image inside */
+.about-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;        /* 🔥 key change – no cropping */
+  object-position: center center;
+  background: #000;           /* letterbox bars blend into bg */
+
+  opacity: 0;
+  transform: scale(1);        /* no extra zoom that cuts edges */
+  transition: opacity 0.8s ease;
+}
+
+.about-slide.active {
+  opacity: 1;
+}
+
 
 /* Glow border layer */
 .about-image::before {

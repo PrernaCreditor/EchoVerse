@@ -20,7 +20,8 @@
   <!-- HEADER -->
  <header class="navbar">
   <div class="logo">
-    <img src="assets/collinlogobg.png" alt="Collin Freestone Entertainment" id="headerimage">
+    <img src="assets/logooo.png" alt="Collin Freestone Entertainment" id="logoimage">
+    <img src="assets/col.png" alt="Collin Freestone Entertainment" id="headerimage">
   </div>
   <nav class="nav-links" id="navLinks">
     <ul>
@@ -28,6 +29,7 @@
       <li><a href="#about">About</a></li>
       <!-- <li><a href="#artists">Artists</a></li> -->
       <li><a href="#artists">Events</a></li>
+       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="login.html">Login</a></li>
     </ul>
@@ -42,6 +44,7 @@
     <a href="#about" onclick="toggleMenu()">About</a>
     <!-- <a href="#artists" onclick="toggleMenu()">Artists</a> -->
     <a href="#artists" onclick="toggleMenu()">Events</a>
+     <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
     <a href="login.html" class="mobile-login" onclick="toggleMenu()">Login</a>
   </div>
@@ -112,20 +115,41 @@
   <div class="about-container">
     <!-- Left: Image + feature chips -->
     <div class="about-image-wrapper">
-      <div class="about-image">
-        <img src="assets/Aboutcollin4.jpg" alt="About Collin Freestone Entertainment" class="about-img">
-        <div class="image-overlay-effect"></div>
+     <div class="about-image about-slideshow">
+  <!-- Slides -->
+  <img src="assets/Aboutcollin3.jpg"
+       alt="About Collin Freestone Entertainment"
+       class="about-slide active">
 
-        <div class="floating-badge">
-          <div class="floating-icon">
-            <i class="fas fa-music"></i>
-          </div>
-          <div class="floating-text">
-            <span>Live Music</span>
-            <small>Nationwide Performances</small>
-          </div>
-        </div>
-      </div>
+  <img src="assets/Aboutcollin7.jpg"
+       alt="Collin performing live"
+       class="about-slide">
+
+  <img src="assets/Aboutcollin8.jpg"
+       alt="Collin at the piano"
+       class="about-slide">
+
+  <img src="assets/Aboutcollin6.jpg"
+       alt="Collin at picnic table"
+       class="about-slide">
+  <img src="assets/Aboutcollin9.jpeg"
+       alt="Collin smiling" 
+        class="about-slide">
+
+  <!-- existing overlay + badge -->
+  <div class="image-overlay-effect"></div>
+
+  <div class="floating-badge">
+    <div class="floating-icon">
+      <i class="fas fa-music"></i>
+    </div>
+    <div class="floating-text">
+      <span>Live Music</span>
+      <small>Nationwide Performances</small>
+    </div>
+  </div>
+</div>
+
 
       <div class="about-features">
         <div class="feature-item">
@@ -201,6 +225,7 @@
     <a href="#freestone-keys" class="acts-nav-item">🎹 Freestone Keys</a>
     <a href="#collin-solo" class="acts-nav-item">🎤🎸 Collin Solo</a>
     <a href="#yoga-pants" class="acts-nav-item">🥁🎹 Yoga Pants (The Duo)</a>
+      <a href="#yoga-pants-karaoke" class="acts-nav-item">🎤🎵 Live Band Karaoke</a>
     <a href="#girl-and-guy" class="acts-nav-item">💍🎶 Girl and a Guy</a>
   </div>
 </section>
@@ -258,39 +283,71 @@
 </section>
 
 <!-- 🥁🎹 Yoga Pants (The Duo) -->
-<section class="act-section" id="yoga-pants">
+<section class="act-section" id="yoga-pants-duo">
   <div class="act-inner">
     <div class="act-image">
-      <img src="assets/Yogapants.png"
-           alt="Yoga Pants (The Duo)">
+      <!-- slideshow for the Duo logo + photos -->
+      <div class="act-slider" data-act="yoga-duo">
+        <!-- replace src with your actual Yoga Pants (The Duo) photo filenames -->
+        <div class="act-slide active">
+          <img src="assets/Yogapants.png" alt="Yoga Pants (The Duo)">
+        </div>
+      </div>
     </div>
 
     <div class="act-content">
-      <!-- <span class="act-label">Act 03</span> -->
       <h3 class="act-title">🥁🎹 Yoga Pants (The Duo)</h3>
 
       <p class="act-text">
-        Yoga Pants (The Duo) is a high-energy two-piece act that combines live drums, keys, and powerful vocals. The show is designed for audience connection, humor, and continuous interaction from start to finish.
+        Yoga Pants (The Duo) is a high-energy two-piece show combining live drums, keys, and lead vocals. Each performance is built around audience interaction, humor, and a request-driven song list.
       </p>
 
       <p class="act-text">
-        This act is available in two formats:
-      </p>
-      <ul class="act-list">
-        <li>Yoga Pants (The Duo) – an all-request, standard duo show.</li>
-        <li>Yoga Pants Live Band Karaoke – an interactive format where guests sing with the live band.</li>
-      </ul>
-
-      <p class="act-text">
-        Both versions share the same character: upbeat, lighthearted, and highly memorable.
+        The Duo format is ideal for venues, private parties, and events that want a compact, high-impact live show with a flexible setup.
       </p>
 
       <a href="#contact" class="btn btn-primary act-btn">
-        Book Yoga Pants
+        Book Yoga Pants (The Duo)
       </a>
     </div>
   </div>
 </section>
+
+<!-- 🎤🎵 Live Band Karaoke with Yoga Pants (The Duo) -->
+<section class="act-section act-alt" id="yoga-pants-karaoke">
+  <div class="act-inner">
+    <div class="act-image">
+      <!-- slideshow for Karaoke logo + performance photos -->
+      <div class="act-slider" data-act="yoga-karaoke">
+        <!-- replace src with your approved Karaoke images -->
+        <div class="act-slide active">
+          <img src="assets/Yogapants2.jpg" alt="Live Band Karaoke with Yoga Pants (The Duo)">
+        </div>
+      </div>
+    </div>
+
+    <div class="act-content">
+      <h3 class="act-title">🎤🎵 Live Band Karaoke with Yoga Pants (The Duo)</h3>
+
+      <p class="act-text">
+        Live Band Karaoke with Yoga Pants (The Duo) turns the audience into the lead singers. Guests select their favorite songs from the karaoke menu and perform live with the band.
+      </p>
+
+      <p class="act-text">
+        This format is designed for maximum crowd participation and is ideal for corporate events, parties, and venues looking for a signature interactive experience.
+      </p>
+
+      <p class="act-text">
+        The show keeps the same upbeat, lighthearted personality as the standard Yoga Pants Duo, with an added focus on guest performances and shared moments on stage.
+      </p>
+
+      <a href="#contact" class="btn btn-primary act-btn">
+        Book Live Band Karaoke
+      </a>
+    </div>
+  </div>
+</section>
+
 
 <!-- 💍🎶 Girl and a Guy -->
 <section class="act-section act-alt" id="girl-and-guy">
