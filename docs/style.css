@@ -1900,6 +1900,8 @@ body {
   100% { transform: translateY(0px); }
 }
 
+
+
 /* =========================================================
    YOUTUBE VIDEO EMBED SECTION
    ========================================================= */
@@ -1978,3 +1980,321 @@ body {
   display: block;
   border-radius: 20px;
 }
+
+
+
+/*-------------------------------------------------- songs list -------------------------------------------*/
+/* ===========================
+   SONG LIST PAGE – FULL FINAL CSS
+   Spotify Theme — No Conflicts
+   =========================== */
+
+#songlist {
+  --bg: #000000;
+  --panel: #111;
+  --muted: #9ca3af;
+  --white: #ffffff;
+  --green: #1db954;
+  --green-soft: #1ed760;
+  --glass: rgba(255, 255, 255, 0.04);
+  --gap: 14px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+/* MAIN CONTAINER (BIGGER & PREMIUM) */
+#songlist .wrap {
+  width: 100%;
+  max-width: 1200px;
+  background: #0a0a0a;
+  border-radius: 24px;
+  padding: 32px;
+  margin: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeInSong 0.6s ease;
+}
+
+/* Fade Animation */
+@keyframes fadeInSong {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CONTROLS */
+#songlist .controls {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#songlist .controls .left {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex: 1 1 420px;
+}
+
+/* SEARCH – Enlarged */
+#songlist .search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #121212;
+  padding: 14px 20px;
+  border-radius: 16px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+#songlist .search svg {
+  opacity: 0.9;
+  color: var(--muted);
+}
+#songlist .search input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--white);
+  font-size: 18px;
+  width: 100%;
+}
+
+/* BUTTONS – Bigger */
+#songlist .btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 18px;
+  border-radius: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.14s ease;
+}
+#songlist .btn:hover {
+  transform: translateY(-3px);
+  color: var(--white);
+  border-color: var(--green);
+  box-shadow: 0 0 14px rgba(29, 185, 84, 0.45);
+}
+#songlist .btn.primary {
+  border-color: rgba(29, 185, 84, 0.5);
+  background: rgba(29, 185, 84, 0.18);
+  color: var(--white);
+}
+
+
+
+/* ALPHABET BAR – Bigger */
+#songlist .alpha {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+#songlist .alpha button {
+  min-width: 42px;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 0;
+  background: #111;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  transition: 0.15s;
+}
+#songlist .alpha button.active {
+  background: rgba(29, 185, 84, 0.35);
+  color: var(--white);
+  box-shadow: 0 0 16px rgba(29, 185, 84, 0.35);
+}
+
+/* LIST AREA */
+#songlist .list-wrap {
+  height: 72vh;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 18px;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* HIDE SCROLLBAR */
+#songlist .list-wrap::-webkit-scrollbar {
+  width: 0;
+}
+/* #songlist .list-wrap {
+  scrollbar-width: none;
+} */
+
+/* Show green scrollbar on hover */
+#songlist .list-wrap:hover::-webkit-scrollbar {
+  width: 8px;
+}
+#songlist .list-wrap:hover::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 999px;
+}
+
+/* SONG ITEMS – Much Bigger */
+#songlist ul.song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#songlist ul.song-list li {
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: #161616;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  transition: 0.2s;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideUp 0.45s ease forwards;
+}
+
+/* Slide Up Effect */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#songlist ul.song-list li:hover {
+  background: rgba(29, 185, 84, 0.18);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(29, 185, 84, 0.2);
+}
+
+#songlist li .title {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ICONS */
+#songlist .icons {
+  display: flex;
+  gap: 16px;
+}
+
+#songlist .icons i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#songlist .fa-heart {
+  color: #444;
+  transition: 0.25s;
+}
+
+#songlist .fa-heart.fav-active {
+  color: #1db954;
+  transform: scale(1.25);
+}
+
+#songlist .fa-copy {
+  opacity: 0.9;
+}
+#songlist .fa-copy:hover {
+  opacity: 1;
+}
+
+/* FLASH EFFECT */
+#songlist .flash {
+  animation: flashSong 0.8s ease;
+  background: rgba(29, 185, 84, 0.27) !important;
+}
+
+@keyframes flashSong {
+  50% { transform: scale(1.02); }
+}
+
+/* TOAST */
+#songlist .toast {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  background: rgba(29, 185, 84, 0.35);
+  padding: 12px 18px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: 0.25s;
+}
+#songlist .toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE  ----------------------------*/
+@media (max-width: 720px) {
+
+  /* Smaller padding for container */
+  #songlist .wrap {
+    padding: 14px !important;
+    gap: 14px !important;
+  }
+
+  /* SEARCH BAR smaller */
+  #songlist .search {
+    padding: 10px 10px !important;
+    border-radius: 12px !important;
+    gap: 8px !important;
+    width: 170px;
+  }
+
+  #songlist .search input {
+    font-size: 15px !important;
+  }
+
+  /* BUTTONS smaller */
+  #songlist .btn {
+    padding: 8px 8px !important;
+    font-size: 10px !important;
+    border-radius: 10px !important;
+    width: 60px;
+  }
+
+  /* Hide alphabet bar (already hidden) */
+  #songlist .alpha {
+    display: none !important;
+  }
+
+  /* SONG ITEMS slightly smaller */
+  #songlist ul.song-list li {
+    padding: 14px 14px !important;
+    font-size: 15px !important;
+  }
+
+  #songlist li .title {
+    font-size: 15px !important;
+  }
+
+  /* Icons slightly smaller */
+  #songlist .icons i {
+    font-size: 18px !important;
+  }
+}
+
