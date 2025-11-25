@@ -83,6 +83,16 @@ body {
   gap: 0.6rem;              /* space between icon + wordmark */
 }
 
+/* logo anchor link (for gallery page) */
+.logo a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* round icon / mark */
 #logoimage {
   height: 34px;             /* a bit smaller than text logo */
@@ -106,6 +116,10 @@ body {
 /* optional: make them scale a bit down on small screens */
 @media (max-width: 600px) {
   .logo {
+    gap: 0.4rem;
+  }
+
+  .logo a {
     gap: 0.4rem;
   }
 
@@ -966,12 +980,19 @@ body {
   display: block;
   border-radius: 22px;
   object-fit: cover;
-  transform: scale(1.03);
-  transition: transform 0.8s ease;
+  transform: translateY(0) scale(1.03);
+  transition: transform 0.6s ease;
+  animation: shiftDown 2s ease forwards;
 }
 
 .act-inner:hover .act-image img {
-  transform: scale(1.08);
+  transform: translateY(6px) scale(1.08);
+  transition: transform 0.6s ease;
+}
+
+@keyframes shiftDown {
+  from { transform: translateY(0) scale(1.03); }
+  to   { transform: translateY(6px) scale(1.03); }
 }
 
 /* Text side */
