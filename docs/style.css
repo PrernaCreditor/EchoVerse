@@ -80,6 +80,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  filter: brightness(1.6) contrast(1.2);
+
   gap: 0.6rem;              /* space between icon + wordmark */
 }
 
