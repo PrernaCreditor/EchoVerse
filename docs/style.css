@@ -1725,6 +1725,35 @@ body {
 /* ============================
      UNIVERSAL SLIDER SYSTEM
    ============================ */
+/* DEFAULT (Desktop/Laptop) */
+.act-image {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* Make slider FULL width and proper height */
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* MOBILE FIX — resize slider height so it looks clean */
+@media (max-width: 600px) {
+  .act-image {
+    height: 240px;   /* smaller and perfect for mobile */
+    border-radius: 10px;
+  }
+
+  .slides img {
+    object-position: center; /* prevents weird cropping */
+  }
+}
+
+
 
 .slider {
   width: 100%;
@@ -1765,10 +1794,54 @@ body {
   animation: fadeSlide 12s infinite;
 }
 
+.slides5 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  animation: fadeSlide 15s infinite;
+}
+
+.slides6 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  animation: fadeSlide 18s infinite;
+}
+
+/* === Timing for 4 images === */
+
 .slides4 img:nth-child(1) { animation-delay: 0s; }
 .slides4 img:nth-child(2) { animation-delay: 3s; }
 .slides4 img:nth-child(3) { animation-delay: 6s; }
 .slides4 img:nth-child(4) { animation-delay: 9s; }
+
+
+/* === Timing for 5 images === */
+
+.slides5 img:nth-child(1) { animation-delay: 0s; }
+.slides5 img:nth-child(2) { animation-delay: 3s; }
+.slides5 img:nth-child(3) { animation-delay: 6s; }
+.slides5 img:nth-child(4) { animation-delay: 9s; }
+.slides5 img:nth-child(5) { animation-delay: 12s; }
+
+/* === Timing for 6 images === */
+
+.slides6 img:nth-child(1) { animation-delay: 0s; }
+.slides6 img:nth-child(2) { animation-delay: 3s; }
+.slides6 img:nth-child(3) { animation-delay: 6s; }
+.slides6 img:nth-child(4) { animation-delay: 9s; }
+.slides6 img:nth-child(5) { animation-delay: 12s; }
+.slides6 img:nth-child(6) { animation-delay: 15s; }
 
 /* === Timing for 3 images === */
 .slides img:nth-child(1) { animation-delay: 0s; }
@@ -1777,12 +1850,13 @@ body {
 
 /* === Smooth fade effect === */
 @keyframes fadeSlide {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  33%  { opacity: 1; }
-  38%  { opacity: 0; }
+  0% { opacity: 0; }
+  5% { opacity: 1; }     /* Smooth fade-in */
+  20% { opacity: 1; }    /* Hold full opacity */
+  30% { opacity: 0; }    /* Smooth fade-out */
   100% { opacity: 0; }
 }
+
 
 /* ======== Responsive ======== */
 @media (max-width: 768px) {
@@ -2320,3 +2394,8 @@ body {
     font-size: 18px !important;
   }
 }
+
+
+
+/*------------------------------ DashBoard style ---------------------------------------------------------------*/
+

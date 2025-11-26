@@ -2090,3 +2090,8 @@ document.addEventListener('keydown', (e) => {
     applySearch('');
   }
 });
+
+
+
+//-------------------------------------------- dashboard javascript --------------------------------------------------
+
