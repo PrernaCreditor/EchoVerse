@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – Collin Entertainment</title>
+
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="dashboard-body">
+
+  <!-- MOBILE SIDEBAR BUTTON -->
+  <button class="mobile-menu-btn" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- DARK OVERLAY FOR MOBILE -->
+  <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar" id="sidebar">
+    <div class="dash-logo">
+      <i class="fa-solid fa-music"></i>
+      <span>Dashboard</span>
+    </div>
+
+    <nav class="dash-nav">
+      <a class="active"><i class="fa-solid fa-house"></i> Overview</a>
+      <a><i class="fa-solid fa-calendar-days"></i> Live Shows</a>
+      <a><i class="fa-solid fa-ticket"></i> Bookings</a>
+      <a><i class="fa-solid fa-user"></i> Profile</a>
+      <a><i class="fa-solid fa-gear"></i> Settings</a>
+    </nav>
+
+    <button class="logout-btn">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+    </button>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="dash-main">
+
+    <h1 class="dash-title">Welcome Back 🎧</h1>
+
+    <!-- SUMMARY CARDS -->
+    <section class="card-row">
+      <div class="dash-card">
+        <h3>Total Shows</h3>
+        <p id="totalShows">0</p>
+      </div>
+      <div class="dash-card">
+        <h3>Total Bookings</h3>
+        <p id="totalBookings">0</p>
+      </div>
+      <div class="dash-card">
+        <h3>Upcoming</h3>
+        <p id="upcomingEvents">0</p>
+      </div>
+    </section>
+
+    <!-- LIVE SHOWS -->
+    <section class="section-block">
+      <div class="section-header">
+        <h2>Live Shows</h2>
+
+        <div class="show-controls">
+          <input type="text" id="searchShow" placeholder="Search Show..." />
+          <select id="sortShows">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="upcoming">Upcoming</option>
+          </select>
+          <button class="green-btn" onclick="openAddShow()">+ Add Show</button>
+        </div>
+      </div>
+
+      <div id="showsContainer" class="shows-list"></div>
+
+    </section>
+  </main>
+
+  <!-- FLOATING BUTTON MOBILE -->
+  <button class="floating-add" onclick="openAddShow()">+</button>
+
+  <!-- ADD SHOW MODAL -->
+  <div id="addShowModal" class="modal">
+    <div class="modal-content slide-up">
+      <h2 id="modalTitle">Add New Show</h2>
+
+      <input type="text" id="showName" placeholder="Show Title" />
+      <input type="date" id="showDate" />
+      <input type="text" id="showLocation" placeholder="Location" />
+
+      <button class="green-btn" onclick="saveShow()">Save</button>
+      <button class="close-btn" onclick="closeAddShow()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div id="bookModal" class="modal">
+    <div class="modal-content slide-up">
+      <h2>Book This Show</h2>
+
+      <input type="text" id="bookName" placeholder="Your Name" />
+      <input type="email" id="bookEmail" placeholder="Your Email" />
+
+      <button class="green-btn" onclick="confirmBooking()">Confirm</button>
+      <button class="close-btn" onclick="closeBooking()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="dashboard.js" defer></script>
+</body>
+</html>
